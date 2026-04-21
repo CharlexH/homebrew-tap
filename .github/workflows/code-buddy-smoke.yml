@@ -1,0 +1,14 @@
+name: Code Buddy Smoke
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify Homebrew install
+        run: ./scripts/smoke-test-code-buddy.sh

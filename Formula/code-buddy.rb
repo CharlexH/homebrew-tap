@@ -23,13 +23,13 @@ class CodeBuddy < Formula
     python = Formula["python@3.13"].opt_bin/"python3.13"
     venv = virtualenv_create(libexec, python)
     venv.pip_install resource("websockets")
-    system libexec/"bin/pip", "install", "--no-deps", "--no-build-isolation", buildpath
+    venv.pip_install buildpath
 
     helper_dest = libexec/"helper"
     helper_dest.mkpath
-    resource("code-buddy-helper").stage do
-      helper_dest.install "CodeBuddyBLEHelper.app"
-    end
+    helper_resource = resource("code-buddy-helper")
+    helper_resource.fetch
+    system "ditto", "-x", "-k", helper_resource.cached_download, helper_dest
 
     (bin/"code-buddy").write_env_script libexec/"bin/code-buddy",
       CODEX_BUDDY_BLE_BACKEND: "native",
