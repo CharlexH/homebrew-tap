@@ -3,8 +3,8 @@ class CodeBuddy < Formula
 
   desc "StickS3 Bluetooth approvals for Codex CLI on macOS"
   homepage "https://github.com/CharlexH/CodeBuddy"
-  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.3/code-buddy-v0.1.3.tar.gz"
-  sha256 "372675cd17540f98f6afca4dd021358f7c66ca3c0d1331462182c1cc9b2886af"
+  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.4/code-buddy-v0.1.4.tar.gz"
+  sha256 "ac3375e2a45d184e28511390f59e0c61788f3cad3063c298a30be5f635a03e21"
   license "MIT"
 
   depends_on "python@3.13"
