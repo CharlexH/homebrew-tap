@@ -3,8 +3,8 @@ class CodeBuddy < Formula
 
   desc "StickS3 Bluetooth approvals for Codex CLI on macOS"
   homepage "https://github.com/CharlexH/CodeBuddy"
-  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.2/code-buddy-v0.1.2.tar.gz"
-  sha256 "9eeb13de43a8a16ec240d91c160ca6b0cdb37bf593a9538b917f7d0ade852e3d"
+  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.3/code-buddy-v0.1.3.tar.gz"
+  sha256 "372675cd17540f98f6afca4dd021358f7c66ca3c0d1331462182c1cc9b2886af"
   license "MIT"
 
   depends_on "python@3.13"
@@ -32,7 +32,7 @@ class CodeBuddy < Formula
     system "ditto", "-x", "-k", helper_resource.cached_download, helper_dest
 
     (bin/"code-buddy").write_env_script libexec/"bin/code-buddy",
-      CODEX_BUDDY_BLE_BACKEND:    "native",
+      CODEX_BUDDY_BLE_BACKEND: "native",
       CODEX_BUDDY_BLE_HELPER_APP: helper_dest/"CodeBuddyBLEHelper.app"
   end
 
