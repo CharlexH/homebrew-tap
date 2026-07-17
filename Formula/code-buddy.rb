@@ -1,10 +1,10 @@
 class CodeBuddy < Formula
   include Language::Python::Virtualenv
 
-  desc "StickS3 Bluetooth approvals for Codex CLI on macOS"
+  desc "StickS3 companion for Codex on macOS"
   homepage "https://github.com/CharlexH/CodeBuddy"
-  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.4/code-buddy-v0.1.4.tar.gz"
-  sha256 "ac3375e2a45d184e28511390f59e0c61788f3cad3063c298a30be5f635a03e21"
+  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.13/code-buddy-v0.1.13.tar.gz"
+  sha256 "0d9a856f8745fd7a937a3e2a674485bdb2fa9b542391275aabddb8c802355cc6"
   license "MIT"
 
   depends_on "python@3.13"
@@ -15,8 +15,8 @@ class CodeBuddy < Formula
   end
 
   resource "code-buddy-helper" do
-    url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.2/code-buddy-macos-helper-v0.1.2.zip"
-    sha256 "9250d0649b75bde77f5ea453c158ce86c57517cbe44bca9ea228b3fcd6b8a11b"
+    url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.13/code-buddy-macos-helper-v0.1.13.zip"
+    sha256 "53d3e7b9c1ba6db7ec7d982f6f6422f8c1e8214d35b180168318d92f4296af0f"
   end
 
   def install
@@ -32,7 +32,7 @@ class CodeBuddy < Formula
     system "ditto", "-x", "-k", helper_resource.cached_download, helper_dest
 
     (bin/"code-buddy").write_env_script libexec/"bin/code-buddy",
-      CODEX_BUDDY_BLE_BACKEND: "native",
+      CODEX_BUDDY_BLE_BACKEND:    "native",
       CODEX_BUDDY_BLE_HELPER_APP: helper_dest/"CodeBuddyBLEHelper.app"
   end
 
