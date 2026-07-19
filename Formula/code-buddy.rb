@@ -3,8 +3,8 @@ class CodeBuddy < Formula
 
   desc "StickS3 companion for Codex on macOS"
   homepage "https://github.com/CharlexH/CodeBuddy"
-  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.13/code-buddy-v0.1.13.tar.gz"
-  sha256 "0d9a856f8745fd7a937a3e2a674485bdb2fa9b542391275aabddb8c802355cc6"
+  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.18/code-buddy-v0.1.18.tar.gz"
+  sha256 "6f475e9017f7e88170d01dc12ab6c62de1ea97ea99601938a6f444786f466fc1"
   license "MIT"
 
   depends_on "python@3.13"
@@ -15,8 +15,8 @@ class CodeBuddy < Formula
   end
 
   resource "code-buddy-helper" do
-    url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.13/code-buddy-macos-helper-v0.1.13.zip"
-    sha256 "53d3e7b9c1ba6db7ec7d982f6f6422f8c1e8214d35b180168318d92f4296af0f"
+    url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.18/code-buddy-macos-helper-v0.1.18.zip"
+    sha256 "3dffb9df41752433039f20189e307194b8d13cd21c3ecc715023b4ef26e3421c"
   end
 
   def install
