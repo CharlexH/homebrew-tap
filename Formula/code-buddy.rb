@@ -3,8 +3,8 @@ class CodeBuddy < Formula
 
   desc "StickS3 companion for Codex on macOS"
   homepage "https://github.com/CharlexH/CodeBuddy"
-  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.32/code-buddy-v0.1.32.tar.gz"
-  sha256 "82e1d4cdbcfceba5a67975776d8ad718973a35101d2f1bede655e89fb41aff99"
+  url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.42/code-buddy-v0.1.42.tar.gz"
+  sha256 "edd965cf7871a7fc1cbb80e537d68d37b5597f84c1fa38688115d17409bb2ee5"
   license "MIT"
 
   depends_on "python@3.13"
@@ -15,12 +15,12 @@ class CodeBuddy < Formula
   end
 
   resource "code-buddy-helper" do
-    url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.32/code-buddy-macos-helper-v0.1.32.zip"
-    sha256 "ecacf3787dbb99d985fb65ae3cd6479f9ce838bbdc517d2a4fe68e15032633cc"
+    url "https://github.com/CharlexH/CodeBuddy/releases/download/v0.1.42/code-buddy-macos-helper-v0.1.42.zip"
+    sha256 "5c45be5b1d31c77f7be6e1396f58bf512cc3f33ad716b6ea0341f7125822f23c"
   end
 
   def install
-    python = Formula["python@3.13"].opt_bin/"python3.13"
+    python = formula_opt_bin("python@3.13")/"python3.13"
     venv = virtualenv_create(libexec, python)
     venv.pip_install resource("websockets")
     venv.pip_install buildpath
